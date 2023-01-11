@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Dashboard</title>
+    <link rel="styleSheet" href="css/style.css">
+    <link rel="script" href="js/script.js">
+
     <!-- API link to use later -->
     <!-- https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key} -->
 </head>
@@ -15,9 +18,20 @@
     <aside class="searchBox">
         <h2>Search for a City:</h2>
     </aside>
-    <container class="dailyWeather">
-        
-    </container>
-    
+
+
+    <div class="card">
+        <div class="search">
+            <input type="text" class="search-bar">
+                <button>Search!</button>
+            </input>
+        </div>
+        <div class="weather">
+            <h2 class="CITY"></div>
+            <div class="temperature"></div>
+            <div class="description"></div>
+        </div>
+    </div>
+
 </body>
 </html>
