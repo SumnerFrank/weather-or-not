@@ -3,4 +3,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: aquamarine;
+    margin: 0;
+}
+
+.card {
+    background: lightgrey;
+    padding: 12px;
+    border-radius: 25px;
 }
