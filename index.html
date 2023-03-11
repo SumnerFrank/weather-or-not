@@ -8,26 +8,35 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header class="titleBlock">
+    <header class="titleBlock bg-dark text-white text-center">
         <h1>Weather Dashboard</h1>
     </header>
     
-    <div class="card">
-        <div class="search">
-            <div class="searchBox">
-                <h2>Search for a City:</h2>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-3 p-2 search-column">
+                <form class="border p-2" id="city-search-form">
+                    <h2>Search for a City:</h2>
+                    <input id="city" type="text" class="search-bar">
+                        <button id="btn primary-btn" type="submit">Search!</button>
+                    </input>
+                </form>
+                <div class = "past-search border" id = "past-search-button"></div>
             </div>
-            <input type="text" class="search-bar">
-                <button id="searchBtn">Search!</button>
-            </input>
+            <div class="col-12 col-md-9">
+                <div class="row border selected-city" id="current-forecast">
+                    <div class="col-12">
+                        <h2 id="searched-city"></h2>
+                        <div id="current-weather-container" class="list-group"></div>
+                    </div>
+                </div>
+                <div class="row border" id="five-day-forecast">
+                    <h2 class="col-12" id="forecast"></h2>
+                    <div class="d-flex" id="five-day-container"></div>
+                </div>
+            </div>
         </div>
-        <div id="weather" class="col-sm-4">
-            <h2 id="city"></div>
-            <div id="temperature"></div>
-            <div id="description"></div>
-            <div id="humidity"></div>
-        </div>
-    </div>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
