@@ -2,8 +2,9 @@
 const apiKey = "fdb3fbd4a502e98a93742bb761dbcb16";
 const apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
 const cities = [];
-const searchBtn = document.querySelector('#searchBtn');
-const searchHistoryBtn = document.querySelector('#searchHistoryBtn');
+const searchBtn = document.querySelector('#city-search-form');
+const searchHistoryBtn = document.querySelector('#past-search-btn');
+const weatherContainerEl = document.querySelector('#current-weather-container');
 
 
 
