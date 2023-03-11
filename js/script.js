@@ -13,3 +13,15 @@ function getCity(city) {
     })
   })
 }
+
+// function displayForecast(weather) {
+
+// }
+
+// function searchHistory(searchHistory) {
+
+// }
+
+// HANDLERS
+cityFormEl.addEventListener("submit", formSubmitHandler);
+searchHistoryButtonEl.addEventListener("submit", searchHistoryHandler);
