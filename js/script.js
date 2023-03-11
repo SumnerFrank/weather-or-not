@@ -55,18 +55,30 @@ function displayForecast(weather, searchCity) {
   citySearchInputEl.textContent = searchCity
 
   //date 
+  const currentDate = document.createElement('span')
+  currentDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") "
+  citySearchInputEl.appendChild(currentDate)
 
   //image
+  var weatherIcon = document.createElement("img")
+  weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`)
+  citySearchInputEl.appendChild(weatherIcon)
 
   //temp 
+  var temperatureEl = document.createElement("span")
+  temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F"
+  temperatureEl.classList = "list-group-item"
 
   // wind
+  var windSpeedEl = document.createElement("span")
+  windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH"
+  windSpeedEl.classList = "list-group-item"
 
   // humidity
+  var humidityEl = document.createElement("span")
+  humidityEl.textContent = "Humidity: " + weather.main.humidity + " %"
+  humidityEl.classList = "list-group-item"
 
-
-  let lat = weather.coord.lat;
-  let lon = weather.coord.lon;
 }
 
 // function searchHistory(searchHistory) {
