@@ -1,10 +1,3 @@
-function weatherSearch() {
-    var cityName = 
-fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=10&appid=fdb3fbd4a502e98a93742bb761dbcb16`)
-  .then((response) => response.json())
-  .then((data) => {
-
-  });
-
-}
-
+const apiKey = "fdb3fbd4a502e98a93742bb761dbcb16";
+const apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
+const cities = [];
