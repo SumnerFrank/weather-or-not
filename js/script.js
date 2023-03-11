@@ -3,7 +3,7 @@ const apiKey = 'fdb3fbd4a502e98a93742bb761dbcb16';
 const apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
 const cities = [];
 const searchBtn = document.querySelector('#city-search-form');
-const cityInpulEl = document.querySelector('#city')
+const cityInputlEl = document.querySelector('#city')
 const searchHistoryBtn = document.querySelector('#past-search-btn');
 const citySearchInputEl = document.querySelector('#searched-city')
 const weatherContainerEl = document.querySelector('#current-weather-container');
@@ -51,6 +51,7 @@ function getCityWeather(city) {
 }
 
 function displayForecast(weather, searchCity) {
+  // resets to empty form 
   weatherContainerEl.textContent = ''
   citySearchInputEl.textContent = searchCity
 
@@ -78,6 +79,12 @@ function displayForecast(weather, searchCity) {
   var humidityEl = document.createElement("span")
   humidityEl.textContent = "Humidity: " + weather.main.humidity + " %"
   humidityEl.classList = "list-group-item"
+
+  // adds elements to container 
+  weatherContainerEl.appendChild(temperatureEl)
+  weatherContainerEl.appendChild(humidityEl)
+  weatherContainerEl.appendChild(windSpeedEl)
+
 
 }
 
