@@ -14,6 +14,15 @@ function getCity(city) {
   })
 }
 
+function getCityWeather(city) {
+  fetch(apiURL)
+  .then(function(response) {
+    response.json().then(function(data) {
+      displayForecast(data, city)
+    })
+  })
+}
+
 // function displayForecast(weather) {
 
 // }
