@@ -2,6 +2,9 @@
 const apiKey = "fdb3fbd4a502e98a93742bb761dbcb16";
 const apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
 const cities = [];
+const searchBtn = document.querySelector('#searchBtn');
+const searchHistoryBtn = document.querySelector('#searchHistoryBtn');
+
 
 
 // Necessary Functions
@@ -32,5 +35,5 @@ function getCityWeather(city) {
 // }
 
 // HANDLERS
-cityFormEl.addEventListener("submit", formSubmitHandler);
-searchHistoryButtonEl.addEventListener("submit", searchHistoryHandler);
+searchBtn.addEventListener("submit", formSubmitHandler);
+searchHistoryBtn.addEventListener("submit", searchHistoryHandler);
