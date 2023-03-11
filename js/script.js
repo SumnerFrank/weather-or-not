@@ -43,6 +43,8 @@ const apiURL = `https://api.openweathermap.org/data/forecast?q=${city}&units=imp
 }
 
 function getCityWeather(city) {
+  const apiKey = 'fdb3fbd4a502e98a93742bb761dbcb16';
+  const apiURL = `https://api.openweathermap.org/data/forecast?q=${city}&units=imperial&appid=${apiKey}`
   fetch(apiURL)
   .then(function(response) {
     response.json().then(function(data) {
@@ -146,6 +148,14 @@ function searchHistory(searchHistory) {
   searchHistoryEl.setAttribute('data-city', searchHistory)
   searchHistoryEl.setAttribute('type', 'submit')
   searchHistoryEl.prepend(searchHistory)
+}
+
+function searchHistoryHandler(event) {
+  let city = event.target.getAttribute('data-city')
+  if(city) {
+    getCityWeather(city)
+    getCity(city)
+  }
 }
 
 // HANDLERS
