@@ -57,27 +57,25 @@ function displayWeather(weather, citySearch) {
   //date 
   const currentDate = document.createElement("h4")
   currentDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") "
-  currentDate.classList = "card-header text-center"
   citySearchInputEl.appendChild(currentDate)
 
   //image
   var weatherIcon = document.createElement("img")
-  weatherIcon.classList = "card-body text-center"
   weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`)
   citySearchInputEl.appendChild(weatherIcon)
 
   //temp 
-  var forecastTemp = document.createElement("span")
+  var temperatureEl = document.createElement("span")
   temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F"
   temperatureEl.classList = "list-group-item"
 
   // wind
-  var forecastWind = document.createElement("span")
+  var windSpeedEl = document.createElement("span")
   windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH"
   windSpeedEl.classList = "list-group-item"
 
   // humidity
-  var forecastHumidity = document.createElement("span")
+  var humidityEl = document.createElement("span")
   humidityEl.textContent = "Humidity: " + weather.main.humidity + " %"
   humidityEl.classList = "list-group-item"
 }
