@@ -78,6 +78,15 @@ function displayWeather(weather, citySearch) {
   var humidityEl = document.createElement("span")
   humidityEl.textContent = "Humidity: " + weather.main.humidity + " %"
   humidityEl.classList = "list-group-item"
+
+  weatherContainerEl.appendChild(temperatureEl)
+  weatherContainerEl.appendChild(humidityEl)
+  weatherContainerEl.appendChild(windSpeedEl)
+
+
+  var lat = weather.coord.lat
+  var lon = weather.coord.lon
+  getUvIndex(lat,lon)
 }
 
 function displayForecast(weather) {
@@ -123,6 +132,8 @@ function displayForecast(weather) {
   forecastContainerEl.appendChild(forecastTemp)
   forecastContainerEl.appendChild(forecastHumidity)
   forecastContainerEl.appendChild(forecastWind)
+  forecastContainerEl.appendChild(forecastEl)
+
 
     }
 }
