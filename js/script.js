@@ -94,9 +94,9 @@ function displayForecast(weather) {
   forecastContainerEl.textContent = ""
   forecastTitle.textContent = "5 Day Forecast:"
 
-  let forecast = weather.list 
+  var forecast = weather.list 
     for(var i=5; i < forecast.length; i=i+8) {
-      let dailyForecast = forecast[i]
+      var dailyForecast = forecast[i]
 
       const forecastEl = document.createElement("div")
       forecastEl.classList = "card bg-primary text-light m-2"
@@ -148,7 +148,7 @@ function searchHistory(searchHistory) {
 }
 
 function searchHistoryHandler(event) {
-  let city = event.target.getAttribute("data-city")
+  var city = event.target.getAttribute("data-city")
   if(city) {
     getCityWeather(city)
     getCity(city)
