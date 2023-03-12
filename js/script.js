@@ -1,5 +1,5 @@
 const cities = [];
-const searchBtn = document.querySelector('#city-search-form');
+const searchBtn = document.querySelector('#search-btn');
 const cityInputEl = document.querySelector('#city')
 const searchHistoryBtn = document.querySelector('#past-search-btn');
 const citySearchInputEl = document.querySelector('#searched-city')
@@ -49,6 +49,9 @@ const apiURL = `https://api.openweathermap.org/data/forecast?q=${city}&units=imp
   })
 }
 
+function displayWeather(data, city) {
+  console.log('hello world')
+}
 
 function displayForecast(weather) {
   // resets to empty form 
@@ -116,4 +119,4 @@ function searchHistoryHandler(event) {
 
 // HANDLERS
 searchBtn.addEventListener("submit", formSubmitHandler);
-searchHistoryBtn.addEventListener("submit", searchHistoryHandler);
+searchHistoryBtn.addEventListener("click", searchHistoryHandler);
