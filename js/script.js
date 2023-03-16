@@ -1,7 +1,7 @@
 const cities = [];
 const searchFormEl = document.querySelector('#city-search-form');
 const cityInputEl = document.querySelector('#city');
-const searchHistoryBtn = document.querySelector('#past-search-buttons');
+const searchHistoryBtn = document.querySelector('#past-search-button');
 const citySearchInputEl = document.querySelector('#searched-city');
 const weatherContainerEl = document.querySelector('#current-weather-container');
 const forecastTitle = document.querySelector('#forecast');
@@ -56,7 +56,7 @@ function displayWeather(weather, citySearch) {
 
   //date 
   const currentDate = document.createElement("h4");
-  currentDate.textContent = " (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
+  currentDate.textContent = " (" + moment(weather.dt.value).format("MMM DD, YYYY") + ") ";
   citySearchInputEl.appendChild(currentDate);
 
   //image
@@ -90,7 +90,7 @@ function displayWeather(weather, citySearch) {
 
 function displayForecast(weather) {
   // resets to empty form 
-  forecastContainerEl.textContent = "";
+  forecastContainerEl.innerHTML = "";
   forecastTitle.textContent = "5 Day Forecast:";
 
   var forecast = weather.list;
@@ -102,14 +102,14 @@ function displayForecast(weather) {
       
   //date 
   const forecastDate = document.createElement("h4")
-  forecastDate.textContent = moment.unix(dailyForecast.dt).format("MMM D, YYYY")
+  console.log(dailyForecast[i].dt_txt)
+  forecastDate.textContent = dailyForecast[i].dt_txt;
   forecastDate.classList = "card-header text-center"
   forecastEl.appendChild(forecastDate)
 
   //image
   var weatherIcon = document.createElement("img")
   weatherIcon.classList = "card-body text-center"
-  console.log(weather)
   console.log(`https://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`)
   weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`)
   forecastEl.appendChild(weatherIcon)
@@ -141,11 +141,12 @@ function displayForecast(weather) {
 
 function searchHistory(searchHistory) {
   searchHistoryEl = document.createElement("button");
-  searchHistoryEl.textContent = searchHistory
+  searchHistoryEl.innerHTML = searchHistory
   searchHistoryEl.classList = "d-flex w100 btn-light border p-2"
   searchHistoryEl.setAttribute('data-city', searchHistory)
   searchHistoryEl.setAttribute("type", "submit")
-  searchHistoryEl.prepend(searchHistory)
+  // searchHistoryEl.appendChild(searchHistory)
+  document.querySelector('#past-search-button').prepend(searchHistoryEl);
 }
 
 function searchHistoryHandler(event) {
