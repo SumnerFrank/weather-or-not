@@ -7,6 +7,11 @@ const weatherContainerEl = document.querySelector('#current-weather-container');
 const forecastTitle = document.querySelector('#forecast');
 const forecastContainerEl = document.querySelector('#five-day-container');
 
+
+function formatDate (date){
+  
+}
+
 // Necessary Functions 
 function formSubmitHandler(event){
   event.preventDefault();
@@ -103,6 +108,7 @@ function displayForecast(weather) {
   //date 
   const forecastDate = document.createElement("h4")
   console.log(dailyForecast[i].dt_txt)
+  formatDate(dailyForecast[i].dt_txt)
   forecastDate.textContent = dailyForecast[i].dt_txt;
   forecastDate.classList = "card-header text-center"
   forecastEl.appendChild(forecastDate)
@@ -130,10 +136,13 @@ function displayForecast(weather) {
   forecastHumidity.classList = "list-group-item"
 
   // adds elements to container 
-  forecastContainerEl.appendChild(forecastTemp)
-  forecastContainerEl.appendChild(forecastHumidity)
-  forecastContainerEl.appendChild(forecastWind)
-  forecastContainerEl.appendChild(forecastEl)
+  var weatherCard = document.createElement("div")
+  // weatherCard.classList.add("")
+  weatherCard.appendChild(forecastTemp)
+  weatherCard.appendChild(forecastHumidity)
+  weatherCard.appendChild(forecastWind)
+  weatherCard.appendChild(forecastEl)
+  forecastContainerEl.appendChild(weatherCard)
 
 
     }
