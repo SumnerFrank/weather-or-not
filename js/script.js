@@ -9,7 +9,7 @@ const forecastContainerEl = document.querySelector('#five-day-container');
 
 
 function formatDate (date){
-  
+
 }
 
 // Necessary Functions 
@@ -137,7 +137,7 @@ function displayForecast(weather) {
 
   // adds elements to container 
   var weatherCard = document.createElement("div")
-  // weatherCard.classList.add("")
+  // weatherCard.classList.add("bg-dark text-white")
   weatherCard.appendChild(forecastTemp)
   weatherCard.appendChild(forecastHumidity)
   weatherCard.appendChild(forecastWind)
